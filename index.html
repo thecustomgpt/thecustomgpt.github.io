@@ -26,11 +26,11 @@
             border-color: #3b82f6;
         }
         .arrow {
-            font-size: 40px; /* Increased arrow size */
+            font-size: 40px;
             text-align: center;
             color: #6b7280;
             transition: color 0.3s ease;
-            margin: 8px 0; /* Reduced margin */
+            margin: 8px 0;
         }
         .content {
             min-height: calc(100vh - 160px);
@@ -65,61 +65,20 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 640px) {
-            /* Main Content Section */
-            .text-5xl {
-                font-size: 2.25rem; /* Reduce heading size */
-            }
-            .text-xl {
-                font-size: 1rem; /* Reduce tagline size */
-            }
-            .text-3xl {
-                font-size: 1.5rem; /* Reduce subheading size */
-            }
-            .w-36 {
-                width: 6rem; /* Reduce logo size */
-            }
-            .h-36 {
-                height: 6rem;
-            }
-            .px-6 {
-                padding-left: 1rem; /* Reduce horizontal padding */
-                padding-right: 1rem;
-            }
-            .py-12 {
-                padding-top: 2rem; /* Reduce vertical padding */
-                padding-bottom: 2rem;
-            }
-            .mt-12 {
-                margin-top: 2rem; /* Reduce margins */
-            }
-            .mt-3 {
-                margin-top: 0.75rem;
-            }
-            .download-btn {
-                padding: 0.75rem 1.5rem; /* Smaller button */
-                font-size: 1rem;
-            }
-            .max-w-3xl {
-                max-width: 100%; /* Full width on mobile */
-            }
-
-            /* Flowchart Section */
-            .flowchart-box {
-                padding: 12px; /* Slightly smaller padding */
-            }
-            .flowchart-box p {
-                font-size: 1rem; /* Reduce text size */
-            }
-            .arrow {
-                font-size: 32px; /* Slightly smaller arrow */
-                margin: 4px 0; /* Tighter spacing */
-            }
-            .max-w-2xl {
-                max-width: 100%; /* Full width on mobile */
-            }
-            .mb-8 {
-                margin-bottom: 1.5rem; /* Reduce margin */
-            }
+            .text-5xl { font-size: 2.25rem; }
+            .text-xl { font-size: 1rem; }
+            .text-3xl { font-size: 1.5rem; }
+            .w-36, .h-36 { width: 6rem; height: 6rem; }
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+            .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+            .mt-12 { margin-top: 2rem; }
+            .mt-3 { margin-top: 0.75rem; }
+            .download-btn { padding: 0.75rem 1.5rem; font-size: 1rem; }
+            .max-w-3xl, .max-w-2xl { max-width: 100%; }
+            .flowchart-box { padding: 12px; }
+            .flowchart-box p { font-size: 1rem; }
+            .arrow { font-size: 32px; margin: 4px 0; }
+            .mb-8 { margin-bottom: 1.5rem; }
         }
     </style>
 </head>
@@ -133,18 +92,23 @@
                 <p class="text-xl text-gray-300 mt-3 max-w-xl">Style your chat, tweak the tone - experience AI that truly feels like your own.</p>
             </div>
             <div class="mt-12 animate-in" style="animation-delay: 0.3s;">
-                <a href="custom_gpt.apk" download class="download-btn bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">Download for Android</a>
+                <a id="download-btn" 
+                   href="custom_gpt.apk" 
+                   download 
+                   class="download-btn bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg"
+                   onclick="handleDownload(event)">
+                    Download for Android
+                </a>
             </div>
             <div class="mt-12 max-w-3xl text-center animate-in" style="animation-delay: 0.5s;">
                 <h2 class="text-3xl font-semibold text-white">Why CustomGPT?</h2>
-                <p class="text-gray-300 mt-4 leading-relaxed">CustomGPT offers unparalleled control over your AI conversations. Personalize response styles and tones to suit your needs, all within a sleek, intuitive interface. Enjoy lightning-fast responses and smart AI tailored to your preferences—perfect for casual chats, brainstorming, or boosting productivity.</p>
+                <p class="text-gray-300 mt-4 leading-relaxed">CustomGPT offers unparalleled control over your AI conversations. Personalize response styles and tones to suit your needs, all within a sleek, intuitive interface.</p>
             </div>
         </div>
 
         <!-- Flowchart Section -->
         <div class="max-w-2xl mx-auto text-center mt-12 mb-8 px-6">
             <h2 class="text-3xl font-bold mb-8 text-white animate-in" style="animation-delay: 0.1s;">Download Process</h2>
-
             <div>
                 <div class="flowchart-box animate-in" style="animation-delay: 0.3s;">
                     <p class="font-semibold text-lg">Click "Download for Android"</p>
@@ -166,18 +130,41 @@
                     <p class="font-semibold text-lg">Click "custom_gpt.apk"</p>
                 </div>
                 <div class="arrow">↓</div>
-                <div class="flowchart-box animate-in" style="animation-delay: 0.6s;">
-                    <p class="font-semibold text-lg">Tap on "Install"</p>
-                </div>
-                <div class="arrow">↓</div>
                 <div class="flowchart-box animate-in" style="animation-delay: 0.7s;">
-                    <p class="font-semibold text-lg">Open App & Start Chatting!</p>
+                    <p class="font-semibold text-lg">Install App & Start Chatting!</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Google Fonts for Professional Typography -->
+    <!-- JavaScript -->
+    <script>
+        function handleDownload(event) {
+            event.preventDefault(); 
+            const button = document.getElementById("download-btn");
+
+            // Change button text and disable it
+            button.textContent = "Downloading Started...";
+            button.classList.add("opacity-50", "cursor-not-allowed");
+            button.removeAttribute("href"); 
+
+            // Attempt download
+            const downloadLink = document.createElement("a");
+            downloadLink.href = "custom_gpt.apk";
+            downloadLink.download = "custom_gpt.apk";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            // If failed, re-enable button after 3s
+            setTimeout(() => {
+                button.textContent = "Download for Android";
+                button.classList.remove("opacity-50", "cursor-not-allowed");
+                button.setAttribute("href", "custom_gpt.apk");
+            }, 3000);
+        }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </body>
 </html>
