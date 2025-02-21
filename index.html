@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CustomGPT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Flowchart Styles */
+        .flowchart-box {
+            padding: 16px;
+            background-color: #1f2937;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+        }
+        .flowchart-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            border-color: #3b82f6;
+        }
+        .arrow {
+            font-size: 40px; /* Increased arrow size */
+            text-align: center;
+            color: #6b7280;
+            transition: color 0.3s ease;
+            margin: 8px 0; /* Reduced margin */
+        }
+        .content {
+            min-height: calc(100vh - 160px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Button Hover */
+        .download-btn {
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            /* Main Content Section */
+            .text-5xl {
+                font-size: 2.25rem; /* Reduce heading size */
+            }
+            .text-xl {
+                font-size: 1rem; /* Reduce tagline size */
+            }
+            .text-3xl {
+                font-size: 1.5rem; /* Reduce subheading size */
+            }
+            .w-36 {
+                width: 6rem; /* Reduce logo size */
+            }
+            .h-36 {
+                height: 6rem;
+            }
+            .px-6 {
+                padding-left: 1rem; /* Reduce horizontal padding */
+                padding-right: 1rem;
+            }
+            .py-12 {
+                padding-top: 2rem; /* Reduce vertical padding */
+                padding-bottom: 2rem;
+            }
+            .mt-12 {
+                margin-top: 2rem; /* Reduce margins */
+            }
+            .mt-3 {
+                margin-top: 0.75rem;
+            }
+            .download-btn {
+                padding: 0.75rem 1.5rem; /* Smaller button */
+                font-size: 1rem;
+            }
+            .max-w-3xl {
+                max-width: 100%; /* Full width on mobile */
+            }
+
+            /* Flowchart Section */
+            .flowchart-box {
+                padding: 12px; /* Slightly smaller padding */
+            }
+            .flowchart-box p {
+                font-size: 1rem; /* Reduce text size */
+            }
+            .arrow {
+                font-size: 32px; /* Slightly smaller arrow */
+                margin: 4px 0; /* Tighter spacing */
+            }
+            .max-w-2xl {
+                max-width: 100%; /* Full width on mobile */
+            }
+            .mb-8 {
+                margin-bottom: 1.5rem; /* Reduce margin */
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="content">
+        <!-- Main Content Section -->
+        <div class="flex flex-col items-center justify-center px-6 py-12">
+            <div class="text-center animate-in" style="animation-delay: 0.1s;">
+                <img src="customgpt_logo.png" alt="CustomGPT Logo" class="w-36 h-36 mx-auto mb-0">
+                <h1 class="text-5xl font-bold text-white tracking-tight">CustomGPT</h1>
+                <p class="text-xl text-gray-300 mt-3 max-w-xl">Style your chat, tweak the tone - experience AI that truly feels like your own.</p>
+            </div>
+            <div class="mt-12 animate-in" style="animation-delay: 0.3s;">
+                <a href="custom_gpt.apk" download class="download-btn bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">Download for Android</a>
+            </div>
+            <div class="mt-12 max-w-3xl text-center animate-in" style="animation-delay: 0.5s;">
+                <h2 class="text-3xl font-semibold text-white">Why Choose CustomGPT?</h2>
+                <p class="text-gray-300 mt-4 leading-relaxed">CustomGPT offers unparalleled control over your AI conversations. Personalize response styles and tones to suit your needs, all within a sleek, intuitive interface. Enjoy lightning-fast responses and smart AI tailored to your preferences—perfect for casual chats, brainstorming, or boosting productivity.</p>
+            </div>
+        </div>
+
+        <!-- Flowchart Section -->
+        <div class="max-w-2xl mx-auto text-center mt-12 mb-8 px-6">
+            <h2 class="text-3xl font-bold mb-8 text-white animate-in" style="animation-delay: 0.1s;">Download Process</h2>
+
+            <div>
+                <div class="flowchart-box animate-in" style="animation-delay: 0.3s;">
+                    <p class="font-semibold text-lg">Click "Download for Android"</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="flowchart-box animate-in" style="animation-delay: 0.4s;">
+                    <p class="font-semibold text-lg">APK File Begins Downloading</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="flowchart-box animate-in" style="animation-delay: 0.5s;">
+                    <p class="font-semibold text-lg">Open Downloaded APK</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="flowchart-box animate-in" style="animation-delay: 0.6s;">
+                    <p class="font-semibold text-lg">Confirm Installation</p>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="flowchart-box animate-in" style="animation-delay: 0.7s;">
+                    <p class="font-semibold text-lg">Open App & Start Chatting!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Fonts for Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</body>
+</html>
